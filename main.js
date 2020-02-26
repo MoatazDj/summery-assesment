@@ -59,7 +59,8 @@ function reduce(array, f, acc) {
 //wordLengths("hello its me") // [5,3,2]
 
 function wordLengths(str) {
-    // TODO: your code here 
+  
+
 }
 
 //=============================================================================
@@ -72,7 +73,12 @@ function wordLengths(str) {
 // countOccurrences("hello, world!", "l"); // 3
 
 function countOccurrences(string, character) {
-    // your code is here
+    return reduce(string, function(acc, i){
+            if (character === i) {
+              return acc+1
+            }
+            return acc;
+    }, 0)  
 }
 
 //=============================================================================
@@ -84,7 +90,7 @@ function countOccurrences(string, character) {
 // wordsLongerThanThree("Hello Mad World") //["Hello", "World"]
 
 function wordsLongerThanThree(str) {
-    // TODO: your code here 
+    
 }
 
 //=============================================================================
@@ -99,7 +105,13 @@ function wordsLongerThanThree(str) {
 //repeatString('dog', 3); // => 'dog' + 'dog' + 'dog' => 'dogdogdog'
 
 function repeatString(str, count) { 
- // TODO: your code here 
+ if (count === 0) {
+      return str=''
+ }
+  if (count === 1) {
+    return str    
+  }
+   return str + repeatString(str,count-1)
 } 
  
 
@@ -128,7 +140,34 @@ function repeatString(str, count) {
 // pizza.eatSlice();
 // pizza.eatSlice();
 
-// Write your code here .....
+  function makePizza(crust, size, numberOfSlice) {
+    return{
+      crust : crust,
+      size : size,
+      numberOfSlice : numberOfSlice,
+      addIngredients : addIngredients,
+      ingredients : []
+    }
+  }
+  var crust = function (str) {
+    return str
+  }
+
+  var size = function (string) {
+    return string
+  }
+
+  var numberOfSlice = function (n) {
+    return n
+  }
+
+  var addIngredients = function (str) {
+    ingredients.push(str)
+  }
+
+  var ingredients = function () {
+    return ingredients
+  }
 
 //=============================================================================
 /*                                  Q6                                      */
